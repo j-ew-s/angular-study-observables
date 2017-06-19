@@ -40,7 +40,7 @@ System.register(['angular2/core', 'angular2/common', 'rxjs/Rx', 'rxjs/add/operat
                         new Date(2017, 7, 11)];
                     Rx_1.Observable.fromArray(dates)
                         .map(function (date) {
-                        console.log("Getting start : " + dates);
+                        console.log("Getting start : " + date);
                         return [1, 2, 3];
                     })
                         .subscribe(function (x) { return console.log(x); });

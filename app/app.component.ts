@@ -23,20 +23,21 @@ export class AppComponent {
 
         var search = this.form.find('search');
         search.valueChanges.debounceTime(400)
-                            .map(str => (<string>str).replace(' ', '-'))
-                            .subscribe(x => console.log(x));
+            .map(str => (<string>str).replace(' ', '-'))
+            .subscribe(x => console.log(x));
 
         var dates = [new Date(2017, 7, 9),
-                    new Date(2017, 7, 10),
-                    new Date(2017, 7, 11)];
+        new Date(2017, 7, 10),
+        new Date(2017, 7, 11)];
 
         Observable.fromArray(dates)
-                    .map(date => {
-                        console.log("Getting start : " + dates);
-                        return [1, 2, 3];
-                    })
-                    .subscribe(x => console.log(x));
-
+            .map(date => {
+                console.log("Getting start : " + date);
+                return [1, 2, 3];
+            })
+            .subscribe(x => console.log(x));
 
     }
+
+
 }
