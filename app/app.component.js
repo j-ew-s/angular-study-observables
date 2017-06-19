@@ -28,13 +28,6 @@ System.register(['angular2/core', 'angular2/common', 'rxjs/Rx', 'rxjs/add/operat
         execute: function() {
             AppComponent = (function () {
                 function AppComponent(fb) {
-                    this.form = fb.group({
-                        search: []
-                    });
-                    var search = this.form.find('search');
-                    search.valueChanges.debounceTime(400)
-                        .map(function (str) { return str.replace(' ', '-'); })
-                        .subscribe(function (x) { return console.log(x); });
                     var dates = [new Date(2017, 7, 9),
                         new Date(2017, 7, 10),
                         new Date(2017, 7, 11)];
