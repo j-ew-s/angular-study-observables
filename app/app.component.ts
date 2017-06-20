@@ -13,18 +13,20 @@ import 'rxjs/add/operator/map';
 export class AppComponent {
     constructor(fb: FormBuilder) {
 
-        
-        var dates = [new Date(2017, 7, 9),
-        new Date(2017, 7, 10),
-        new Date(2017, 7, 11)];
+        var observable = Observable.empty();
+        observable.subscribe(x => console.log(x));
 
-        Observable.fromArray(dates)
-            .map(date => {
-                console.log("Getting start : " + date);
-                return [1, 2, 3];
-            })
-            .subscribe(x => console.log(x));
+        observable = Observable.range(1, 5);
+        observable.subscribe(x => console.log(x));
 
+        observable = Observable.of(1, 5);
+        observable.subscribe(x => console.log(x));
+
+        observable = Observable.range(1, 5);
+        observable.subscribe(x => console.log(x));
+
+        observable = Observable.range(1, 5);
+        observable.subscribe(x => console.log(x));
     }
 
 

@@ -28,15 +28,16 @@ System.register(['angular2/core', 'angular2/common', 'rxjs/Rx', 'rxjs/add/operat
         execute: function() {
             AppComponent = (function () {
                 function AppComponent(fb) {
-                    var dates = [new Date(2017, 7, 9),
-                        new Date(2017, 7, 10),
-                        new Date(2017, 7, 11)];
-                    Rx_1.Observable.fromArray(dates)
-                        .map(function (date) {
-                        console.log("Getting start : " + date);
-                        return [1, 2, 3];
-                    })
-                        .subscribe(function (x) { return console.log(x); });
+                    var observable = Rx_1.Observable.empty();
+                    observable.subscribe(function (x) { return console.log(x); });
+                    observable = Rx_1.Observable.range(1, 5);
+                    observable.subscribe(function (x) { return console.log(x); });
+                    observable = Rx_1.Observable.of(1, 5);
+                    observable.subscribe(function (x) { return console.log(x); });
+                    observable = Rx_1.Observable.range(1, 5);
+                    observable.subscribe(function (x) { return console.log(x); });
+                    observable = Rx_1.Observable.range(1, 5);
+                    observable.subscribe(function (x) { return console.log(x); });
                 }
                 AppComponent = __decorate([
                     core_1.Component({
