@@ -12,19 +12,7 @@ import 'rxjs/add/operator/map';
 })
 export class AppComponent {
     constructor(fb: FormBuilder) {
-
-        var observable = Observable.empty();
-        observable.subscribe(x => console.log(x));
-
-        observable = Observable.range(1, 5);
-        observable.subscribe(x => console.log(x));
-
-        observable = Observable.of(1, 5);
-        observable.subscribe(x => console.log(x));
-
-        observable = Observable.of([1,2,3,4,5]);
+        var observable = Observable.interval(1000);
         observable.subscribe(x => console.log(x));
     }
-
-
 }

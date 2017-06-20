@@ -28,15 +28,7 @@ System.register(['angular2/core', 'angular2/common', 'rxjs/Rx', 'rxjs/add/operat
         execute: function() {
             AppComponent = (function () {
                 function AppComponent(fb) {
-                    var observable = Rx_1.Observable.empty();
-                    observable.subscribe(function (x) { return console.log(x); });
-                    observable = Rx_1.Observable.range(1, 5);
-                    observable.subscribe(function (x) { return console.log(x); });
-                    observable = Rx_1.Observable.of(1, 5);
-                    observable.subscribe(function (x) { return console.log(x); });
-                    observable = Rx_1.Observable.range(1, 5);
-                    observable.subscribe(function (x) { return console.log(x); });
-                    observable = Rx_1.Observable.range(1, 5);
+                    var observable = Rx_1.Observable.interval(1000);
                     observable.subscribe(function (x) { return console.log(x); });
                 }
                 AppComponent = __decorate([
