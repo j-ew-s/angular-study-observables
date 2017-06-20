@@ -22,10 +22,7 @@ export class AppComponent {
         observable = Observable.of(1, 5);
         observable.subscribe(x => console.log(x));
 
-        observable = Observable.range(1, 5);
-        observable.subscribe(x => console.log(x));
-
-        observable = Observable.range(1, 5);
+        observable = Observable.of([1,2,3,4,5]);
         observable.subscribe(x => console.log(x));
     }
 
