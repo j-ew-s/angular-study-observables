@@ -13,6 +13,11 @@ import 'rxjs/add/operator/map';
 export class AppComponent {
     constructor(fb: FormBuilder) {
         var observable = Observable.interval(1000);
-        observable.subscribe(x => console.log(x));
+        observable
+            .flatMap(x => {
+                console.log("Chamando o server para pegar ultimas informações");
+                return Observable.of([1, 2, 3]);
+            })
+            .subscribe(news => console.log(news));
     }
 }

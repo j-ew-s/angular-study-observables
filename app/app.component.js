@@ -29,7 +29,12 @@ System.register(['angular2/core', 'angular2/common', 'rxjs/Rx', 'rxjs/add/operat
             AppComponent = (function () {
                 function AppComponent(fb) {
                     var observable = Rx_1.Observable.interval(1000);
-                    observable.subscribe(function (x) { return console.log(x); });
+                    observable
+                        .flatMap(function (x) {
+                        console.log("Chamando o server para pegar ultimas informações");
+                        return Rx_1.Observable.of([1, 2, 3]);
+                    })
+                        .subscribe(function (news) { return console.log(news); });
                 }
                 AppComponent = __decorate([
                     core_1.Component({
