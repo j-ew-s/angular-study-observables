@@ -28,15 +28,8 @@ System.register(['angular2/core', 'angular2/common', 'rxjs/Rx', 'rxjs/add/operat
         execute: function() {
             AppComponent = (function () {
                 function AppComponent(fb) {
-                    var counter = 0;
-                    var ajaxCall = Rx_1.Observable.of('url')
-                        .flatMap(function () {
-                        if (++counter < 2)
-                            return Rx_1.Observable.throw(new Error("Request failed"));
-                        return Rx_1.Observable.of([1, 2, 3]);
-                    });
-                    ajaxCall.retry(3)
-                        .subscribe(function (x) { return console.log(x); }, function (error) { return console.error(error); });
+                    var obs = Rx_1.Observable.of([1, 2, 3]); //Observable.throw(new Error("Erro!!"));
+                    obs.subscribe(function (x) { return console.log(x); }, function (erro) { return console.error(erro); }, function () { return console.log("Completo"); });
                 }
                 AppComponent = __decorate([
                     core_1.Component({

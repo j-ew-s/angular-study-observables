@@ -13,16 +13,10 @@ import 'rxjs/add/operator/map';
 export class AppComponent {
     constructor(fb: FormBuilder) {
 
-     var counter  = 0;
+        var obs = Observable.of([1, 2, 3]);//Observable.throw(new Error("Erro!!"));
 
-     var ajaxCall = Observable.of('url')
-                                .flatMap(() => {
-                                    if (++counter < 2)
-                                        return Observable.throw(new Error ("Request failed"));
-                                    return Observable.of([1,2,3]);
-                                });
-    ajaxCall.retry(3)
-    .subscribe( x => console.log(x), error => console.error(error));
-
+        obs.subscribe(x => console.log(x),
+            erro => console.error(erro),
+            () => console.log("Completo"));
     }
 }
